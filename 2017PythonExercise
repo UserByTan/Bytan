@@ -1,4 +1,4 @@
-求一元二次函数的解的定义函数：
+一：求一元二次函数的解的定义函数code：
 import math
 
 def quad(a,b,c):
@@ -14,3 +14,55 @@ def quad(a,b,c):
 		n = math.sqrt(k)
 		print('根1:',(- b + n) / (2 * a))
 		print('根2:',(- b - n) / (2 * a))
+
+二：测试身高code：
+height = float(input('您的身高为：'))
+weight = float(input('您的体重为：'))
+bim = weight/(height*height)
+if height <= 0 or weight <= 0:
+	print('输入错误，请重新输入')
+elif 0 < bim < 18.5:
+	print('过轻')
+elif 18.5 < bim <25:
+	print('正常')
+elif 25  < bim < 28:
+	print('过重')
+elif 28 <  bim <32:
+	print('肥胖')
+elif bim >=32:
+	print('严重肥胖')
+	
+三：if elif else用法code：
+1：
+age = int(input('你的年龄是：'))
+if age >= 18:
+	print('your age is',age)
+	print('adult')
+elif age >= 6:
+	print('your age is',age)
+	print('teenager')
+else:
+	print('your age is',age)
+	print('kid')
+2：	
+a = int(input('输入1为：'))
+b = int(input('输入2为: '))
+c = int(input('输入3为：'))
+if a >= b:
+	big=a
+else:
+	big=b
+if c >= big:
+	big=c
+print('最大值为：',big)
+四：list用法：
+L = [
+['Apple','Googel','Microsoft'],
+['Java','Python','Ruby','Php'],
+['Adam','Bart','Lisa']]
+print('#打印Apple:')
+print(L[0][0])
+print('#打印Python:')
+print(L[1][2])
+print('打印Lisa:')
+print(L[2][2])
