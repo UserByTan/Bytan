@@ -1,0 +1,16 @@
+求一元二次函数的解的定义函数：
+import math
+
+def quad(a,b,c):
+	k =float( b**2 - 4*a*c )
+	if k < 0:
+		n = math.sqrt(- k)
+		print('根1:', (- b ) / (2 * a) ,'+' , n / (2 *a),'i')
+		print('根2:', (- b ) / (2 * a) ,'-' , n / (2 *a),'i')
+	elif k == 0:
+		m = - b /(2 * a)
+		print('根1和根2都为:',m)
+	else:
+		n = math.sqrt(k)
+		print('根1:',(- b + n) / (2 * a))
+		print('根2:',(- b - n) / (2 * a))
