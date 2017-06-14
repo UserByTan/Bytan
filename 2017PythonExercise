@@ -66,3 +66,7 @@ print('#打印Python:')
 print(L[1][2])
 print('打印Lisa:')
 print(L[2][2])
+四：打印list中元素的小写
+L = ['Abc','ZXC',18,None]
+[s.lower() for s in L if isinstance(s,str)]
+	
