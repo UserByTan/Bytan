@@ -113,4 +113,23 @@ def f(x,y):
 def prod(L):
 	return reduce (f, L)
 print('3* 5* 7* 9 =', prod([3, 5, 7, 9]))
-     2、
+     2、字母首位大写，其余部分小写code：
+def normalize(name): 
+    return name.capitalize()
+L1 = ['adam', 'LISA', 'barT']
+L2 = list(map(normalize, L1))
+print(L2)
+    3、利用map和reduce编写一个str2float函数，把字符串'123.456'转换成浮点数123.456code：
+from functools import reduce
+
+def str2float(s):
+
+    parts = s.split('.')
+    wholenum = parts[0].lstrip('-')
+    decimal = reduce(lambda x, y: x * 10 + y, map(int, wholenum)) if any(wholenum) else 0
+    decimal += reduce(lambda x, y: x * 10 + y, map(int, parts[1])) * 10 ** -len(parts[1]) if '.' in s else 0
+    decimal = -decimal if s.startswith('-') else decimal
+
+    return decimal
+
+print(str2float('123.456'))
