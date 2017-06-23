@@ -133,3 +133,23 @@ def str2float(s):
     return decimal
 
 print(str2float('123.456'))
+八：计算素数的一个方法是埃氏筛法，它的算法code：
+def _odd_iter():
+	n = 1
+	while True:
+		n = n + 2
+		yield n
+def _not_divisible(n):
+	return lambda x: x % n > 0
+def prime():
+	yield 2
+	it = _odd_iter()
+	while True:
+		n = next (it)
+		yield n
+		it = filter(_not_divisible, it)
+for n in prime():
+	if n < 100:
+		print(n)
+	else:
+		break
